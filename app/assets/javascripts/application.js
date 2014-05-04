@@ -12,5 +12,66 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require js-routes
 //= require_tree .
+
+// Loads all Semantic javascripts
+//= require semantic-ui
+
+$(document).ready(function() {
+
+
+
+	$('#signup').click(function(event){
+		event.preventDefault()
+		$('.ui.modal.signup').modal('setting', {
+			closable: false,
+			onApprove : function () {
+				user = { user: {username: $(".signup_username").val(), email: $(".signup_email").val(), password: $(".signup_password").val(), password_confirmation: $('.signup_password_confirmation').val() } }
+				promise = $.post("/users", user);
+				promise.done(function(data) {
+					alert("Logged in successfuly");
+					location.reload();
+				})
+
+				promise.fail(function(data) {
+					$('.ui.modal.signup .message.signup').html(data.responseJSON.errors.join("." + "<br>"));
+				})
+				return false
+			}
+		}).modal('show');
+	}); 
+
+	$('#login').click(function(event){
+		event.preventDefault()
+
+		$('.ui.modal.login').modal('setting', {
+			closable: false,
+			onApprove : function () {
+				user = { user: {username: $(".login_username").val(), email: $(".login_username").val(), password: $(".login_password").val() } }
+				response = $.post( "/users/sign_in", user, function(data){
+					if(data.message == "not ok"){
+						$('.ui.modal.login .message.login').html("Invalid username and password");
+					}
+					else{
+						alert("Logged in successfuly");
+						location.reload();
+					}
+				});
+				return false;
+			}
+		}).modal('show');
+	});
+
+// dropdown for login and password reset
+	$('.ui.dropdown.login').click(function(event){
+		event.preventDefault()
+		$('.ui.dropdown.login').dropdown('show');
+	});
+
+// dropdown for edit profile and logout.
+	$('.ui.dropdown.user').click(function(event){
+		event.preventDefault()
+		$('.ui.dropdown.user').dropdown('show');
+	});
+});

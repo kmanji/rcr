@@ -21,9 +21,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -33,6 +30,13 @@ gem 'state_machine'
 gem 'js-routes'
 gem 'simple_form'
 gem 'cancan' # for user authorization (admin)
+gem 'semantic-ui-rails'
+gem 'therubyracer' # Call JavaScript code and manipulate JavaScript objects from Ruby.
+gem 'semantic-ui-sass'
+gem 'less-rails'
+gem 'autoprefixer-rails'
+gem 'pg'
+gem 'pry' # use with binding.pry to halt app
 
 group :production do
 	gem 'pg'

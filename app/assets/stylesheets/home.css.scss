@@ -1,0 +1,170 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#home {
+	font-family: 'Abel', 'sans-serif';
+}
+
+.ui.page.grid.segment {
+  padding-top: 1.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.segment {
+	background: asset-url('bg.jpg', image) #000000 fixed center center no-repeat;;
+	-webkit-background-size: cover;
+	background-size: cover;
+	margin: 0em;
+	padding-top: 4rem;
+	overflow: hidden;
+	font-family: 'Abel', 'sans-serif';
+}
+
+.masthead.segment .column {
+	position: relative;
+	margin: 0px auto;
+	width: auto;
+}
+
+// changing colour of menu links to gray-black
+.inverted.secondary.pointing.ui.menu .item {
+	color: #555555;
+}
+
+i.circular.icon {
+	border-radius: 500em !important;
+	padding: 0.5em 0.35em !important;
+	-webkit-box-shadow: 0em 0em 0em 0.1em rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0em 0em 0em 0.1em rgba(0, 0, 0, 0.1) inset;
+	line-height: 1 !important;
+	width: 2em !important;
+	height: 2em !important;
+
+}
+
+.item:hover {
+  color: #00BAFF;
+}
+
+i:hover {
+  color: #00BAFF;
+}
+
+.ui.modal.signup {
+	display: none;
+	position: relative;
+	width: 40%;
+	margin: auto;
+	left: 0;
+	background-color: white;
+	border: 1px solid #DDD;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+.ui.modal .close {
+	cursor: pointer;
+	position: absolute;
+	z-index: 1;
+	opacity: .8;
+	font-size: 1.25em;
+	top: -1.75em;
+	right: -1.75em;
+	color: #FFF;
+}
+
+.ui.modal .content {
+	display: table;
+	width: 100%;
+	font-size: 1.5em;
+	position: relative;
+	background-color: #F4F4F4;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.ui.modal .content .left {
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+
+.ui.modal .content .left #input {
+	text-align: left;
+	padding: 6px 5px;
+	font-size: 0.75em;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.ui.modal .actions {
+	padding: 1rem 2rem;
+	text-align: right;
+}
+
+.ui.button {
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	min-height: 1em;
+	outline: 0;
+	border: none;
+	margin: 0;
+	padding: .8em 1.5em;
+	text-transform: uppercase;
+	line-height: 1;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 1rem;
+	text-align: center;
+	text-decoration: none;
+}
+
+.ui.negative.button {
+	background-color: #D95C5C!important;
+	color: #FFF;
+}
+
+.ui.positive.button {
+	background-color: #5BBD72!important;
+	color: #FFF;
+	font-family: 'Abel', 'sans-serif';
+}
+
+.ui.modal.login {
+	display: none;
+	position: relative;
+	width: 40%;
+	margin: auto;
+	left: 0;
+	background-color: white;
+	border: 1px solid #DDD;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+.ui.modal.password {
+	display: none;
+	position: relative;
+	width: 40%;
+	margin: auto;
+	left: 0;
+	background-color: white;
+	border: 1px solid #DDD;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+	color: red;
+	text-align: center;
+	font-size: 24px;
+}

@@ -1,0 +1,40 @@
+<div class="ui attached message">
+  <div class="header">
+    Edit <%= resource_name.to_s.humanize %>'s Profile'
+  </div>
+</div>
+
+<form class="ui form attached fluid segment">
+  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <div class="error messages"></div>
+  <div class="two fields">
+    <div class="field">
+      <div><%= f.text_field :username, required: true, placeholder: 'Username', id: 'input', class: 'edit_username' %></div>
+    </div>
+    <div class="field">
+        <div><%= f.email_field :email, required: true, autofocus: true, placeholder: 'Email', id: 'input', class: 'edit_email' %></div>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current Password", required: true %>
+  </div>
+
+  <div class="two fields">
+    <div class="field">
+      <div><%= f.password_field :password, placeholder: "Set New Password? (minimum 8 characters)", required: false, autocomplete: "off", placeholder: 'Password Confirm', id: 'input', class: 'edit_password'  %></div>
+    </div>
+    <div class="field">
+        <div><%= f.password_field :password_confirmation, required: false, placeholder: 'Confirm New Password?', id: 'input', class: 'edit_password_confirm'  %></div>
+    </div>
+  </div>
+  <div class="ui negative button">Cancel</div>
+      <%= f.submit "Submit", :class => "ui positive button submit-edit-profile"%>
+  <% end %>
+</form>
+
+<div class="ui bottom attached info message">
+  <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+  <%= link_to "Back", :back %>
+</div>
+
+

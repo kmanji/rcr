@@ -1,0 +1,21 @@
+<div class="ui attached message">
+  <div class="header">
+    Send me reset password instructions:
+  </div>
+</div>
+
+<form class="ui form attached fluid segment">
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+	<div class="error messages"></div>
+
+	<div class="field">
+	  	<div><%= f.email_field :email, required: true, autofocus: true, placeholder: 'Email', id: 'input' %></div>
+	</div>
+
+	<div class="ui negative button">Cancel</div>
+	<%= f.submit "Submit", :class => "ui green submit button" %>
+  <%  end %>
+</form>
+
+
+

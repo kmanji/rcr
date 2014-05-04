@@ -1,0 +1,37 @@
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Create an account:
+  </div>
+  <div class="content">
+    <div class="left">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+        <%= f.input :email, required: true, autofocus: true, placeholder: 'Your Email Address here' %>
+        <%= f.input :password, required: true, placeholder: 'Select A Password (minimum 8 characters)' %>
+        <%= f.input :password_confirmation, required: true, placeholder: 'Confirm Your Password' %>
+        <%= f.input :username, required: true, placeholder: 'Select A Username' %>
+        </div>
+        <div class="form actions">
+      <div class="ui button">Cancel</div>
+      <div class="ui button"><%= f.button :submit, "Sign up" %></div>
+    </div>
+      <% end %>
+    </div>
+    <div class="right">
+      Put Facebook/Twitter login here:
+    </div>
+  </div>
+  <%= render "devise/shared/links" %>
+</div>
+
+<% content_for :end_of_body do %>
+  <script>
+  $(document).ready(function() {
+    event.preventDefault()
+    $('.ui.modal').modal('show');
+  };
+  </script>
+<% end %>
