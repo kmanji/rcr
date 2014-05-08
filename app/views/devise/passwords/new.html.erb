@@ -4,8 +4,8 @@
   </div>
 </div>
 
-<form class="ui form attached fluid segment">
-  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "ui form attached fluid segment" }) do |f| %>
 	<div class="error messages"></div>
 
 	<div class="field">
@@ -15,7 +15,7 @@
 	<div class="ui negative button">Cancel</div>
 	<%= f.submit "Submit", :class => "ui green submit button" %>
   <%  end %>
-</form>
+
 
 
 

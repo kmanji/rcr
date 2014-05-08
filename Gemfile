@@ -37,6 +37,8 @@ gem 'less-rails'
 gem 'autoprefixer-rails'
 gem 'pg'
 gem 'pry' # use with binding.pry to halt app
+gem 'carrierwave'
+gem 'rmagick'
 
 group :production do
 	gem 'pg'

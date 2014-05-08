@@ -1,5 +1,7 @@
 Rcr::Application.routes.draw do
 
+  resources :bookcovers
+
   get "home/index"
   
   root to: "home#index"
@@ -17,6 +19,8 @@ Rcr::Application.routes.draw do
     # post "/login" => "devise/sessions#create", as: :user_session 
     delete "/logout" => "devise/sessions#destroy", as: :logout_delete
   end
+
+  get '/bookcovers', to: 'bookcovers#show', path: 'my-uploads'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

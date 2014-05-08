@@ -4,7 +4,8 @@ class RegistrationController < Devise::RegistrationsController
   respond_to :html, :json
 
 	def update_sanitized_params
-		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation)}
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation)}
+		devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password)}
 	end
 
 	def create
@@ -30,7 +31,6 @@ class RegistrationController < Devise::RegistrationsController
   # We need to use a copy of the resource because we don't want to change
   # the current user in place.
   def update
-    binding.pry
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
 

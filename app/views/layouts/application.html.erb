@@ -25,6 +25,7 @@
 							Logged in as <strong class='item'><%= current_user.username %></strong>
 							<i class="dropdown icon"></i>
 							<div class="menu ui transition hidden">
+								<%= link_to "My Uploads", bookcover_path(current_user), method: :get, :class => 'item' %>
 								<%= link_to "Edit Profile", edit_user_registration_path, method: :get, :class => 'item' %>
 								<%= link_to "Logout", logout_path, method: :delete, :class => 'item'  %>
 							</div>

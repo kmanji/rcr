@@ -65,13 +65,11 @@ $(document).ready(function() {
 
 // dropdown for login and password reset
 	$('.ui.dropdown.login').click(function(event){
-		event.preventDefault()
 		$('.ui.dropdown.login').dropdown('show');
 	});
 
 // dropdown for edit profile and logout.
 	$('.ui.dropdown.user').click(function(event){
-		event.preventDefault()
 		$('.ui.dropdown.user').dropdown('show');
 	});
 });
