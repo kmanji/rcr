@@ -1,0 +1,33 @@
+<h1>Listing bookcovers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Meta tags</th>
+      <th>User</th>
+      <th>Description</th>
+      <th>Cover</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookcovers.each do |bookcover| %>
+      <tr>
+        <td><%= bookcover.meta_tags %></td>
+        <td><%= bookcover.user_id %></td>
+        <td><%= bookcover.description %></td>
+        <td><%= image_tag bookcover.cover_url(:thumb).to_s %></td>
+        <td><%= link_to 'Show', my_uploads_bookcovers_path(current_user.username) %></td>
+        <td><%= link_to 'Edit', edit_bookcover_path(current_user.username, my_upload.id) %></td>
+        <td><%= link_to 'Destroy', bookcover, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bookcover', new_bookcover_path %>

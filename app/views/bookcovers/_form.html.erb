@@ -1,0 +1,31 @@
+<div class="set-background">
+<%= form_for @bookcover, :html => { :multipart => true, :class => "ui error form segment" } do |f| %>
+  <% if @bookcover.errors.any? %>
+    <div class="ui error message">
+      <div class="header">Action Forbidden</div>
+      <h2><%= pluralize(@bookcover.errors.count, "error") %> prohibited this bookcover from being saved:</h2>
+      <ul>
+        <% @bookcover.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label style="font-size: 12px;">Description</label>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <label style="font-size: 12px;">Include up to 12 tags (comma separated):</label>
+    <%= f.text_field :meta_tags %>
+  </div>
+
+  <div class="actions">
+    <div class="ui black button cover-button">Choose File (jpg, jpeg, png)</div>
+    <%= f.file_field :cover, :class => "hide-cover" %>
+    <%= f.submit 'Submit', :class => "ui positive button" %>
+  </div>
+<% end %>
+</div>

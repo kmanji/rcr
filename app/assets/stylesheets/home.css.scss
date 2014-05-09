@@ -40,7 +40,11 @@ i.circular.icon {
 	line-height: 1 !important;
 	width: 2em !important;
 	height: 2em !important;
+	
+}
 
+.ui :link {
+	text-decoration: none !important;
 }
 
 .item:hover {
@@ -49,6 +53,10 @@ i.circular.icon {
 
 i:hover {
   color: #00BAFF;
+}
+
+.ui.dropdown.link.item.user:hover {
+	color: #00BAFF;
 }
 
 .ui.modal.signup {

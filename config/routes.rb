@@ -1,11 +1,11 @@
 Rcr::Application.routes.draw do
 
-  resources :bookcovers
 
-  get "home/index"
   
   root to: "home#index"
-  
+  get "/view" => 'home#show'
+  get "/home" => 'home#index'
+
   as :user do 
     # get '/register', to: 'devise/registrations#new', as: :register
     # get '/login', to: 'devise/sessions#new', as: :login
@@ -20,7 +20,12 @@ Rcr::Application.routes.draw do
     delete "/logout" => "devise/sessions#destroy", as: :logout_delete
   end
 
-  get '/bookcovers', to: 'bookcovers#show', path: 'my-uploads'
+  scope ':username' do
+    resources :bookcovers, path: 'covers' do
+      get '/my-uploads' => 'bookcovers#show', as: :my_uploads, on: :collection
+      get '/edit' => 'bookcovers#edit', on: :member
+    end
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

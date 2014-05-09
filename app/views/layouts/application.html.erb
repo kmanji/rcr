@@ -25,7 +25,6 @@
 							Logged in as <strong class='item'><%= current_user.username %></strong>
 							<i class="dropdown icon"></i>
 							<div class="menu ui transition hidden">
-								<%= link_to "My Uploads", bookcover_path(current_user), method: :get, :class => 'item' %>
 								<%= link_to "Edit Profile", edit_user_registration_path, method: :get, :class => 'item' %>
 								<%= link_to "Logout", logout_path, method: :delete, :class => 'item'  %>
 							</div>
@@ -50,8 +49,15 @@
 			<div class="ui three column center aligned stackable divided grid">
 				<div class='column'>
 					<div class="ui icon header">
-						<i class="circular unhide link icon"></i>
-						Browse
+						<% if user_signed_in? %>
+							<%= link_to my_uploads_bookcovers_path(current_user.username) do %>
+								<i class="circular fire link icon"></i>
+							<% end %>
+							My Uploads
+						<% else %>
+							<%= link_to "Getting Started", "#" %> 
+							<i class="circular unhide link icon"></i>
+						<% end %>
 					</div>
 					<p>Browse the selection of pics.</p>
 				</div>
@@ -64,10 +70,12 @@
 				</div>
 				<div class='column'>
 					<div class="ui icon header">
-						<i class="circular upload link icon"></i>
-						Upload
+						<%= link_to new_bookcover_path(current_user.username) do %>
+							<i class="circular upload link icon"></i>
+						<% end %>
+					Upload New
 					</div>
-					<p>Upload your own pics.</p>
+					<p>Create a portfolio</p>
 				</div>
 			</div>
 		</div>

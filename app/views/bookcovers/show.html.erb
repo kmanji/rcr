@@ -1,0 +1,27 @@
+
+
+<p id="notice"><%= notice %></p>
+<h1 class="username"><%= current_user.username.capitalize %>'s Uploads</h1>
+
+<div class="ui stackable items">
+	<% @my_uploads.each do |my_upload| %>
+	  <div class="item">
+	    <div class="image">
+	    	<%= link_to edit_bookcover_path(current_user.username, my_upload.id) do %>
+	      		<%= image_tag my_upload.cover_url(:thumb).to_s %>
+	      	<% end %>
+			<a class="like ui corner label">
+				<i class="like icon"></i>
+			</a>
+	    </div>
+	    <div class="content">
+	      <p class="meta-tags"><%= my_upload.meta_tags %></p>
+	      <hr/>
+	      <p class="description"><%= my_upload.description %></p>
+	    </div>
+	  </div>
+  <% end %>
+</div>
+
+
+

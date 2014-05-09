@@ -1,2 +1,22 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1 class="home-page"></h1>
+
+<div class="ui stackable items">
+	<% @bookcovers.each do |bookcover| %>
+	  <div class="item">
+	    <div class="image">
+	    	<%= link_to view_path(bookcover.id) do %>
+	      		<%= image_tag bookcover.cover_url(:thumb).to_s %>
+	      	<% end %>
+			<a class="like ui corner label">
+				<i class="like icon"></i>
+			</a>
+	    </div>
+	    <div class="content">
+	      <p class="meta-tags"><%= bookcover.meta_tags %></p>
+	      <hr/>
+	      <p class="description"><%= bookcover.description %></p>
+	    </div>
+	  </div>
+  <% end %>
+</div>
+

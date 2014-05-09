@@ -1,0 +1,33 @@
+// Place all the styles related to the Bookcovers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ui.items > .item {
+	width: 200px !important;
+}
+
+.hide-cover {
+	display: none;
+}
+
+.ui.segment:last-child {
+	background: white !important;
+}
+
+.new-bookcover {
+	font-size: 24px;
+	padding: 1em;
+}
+
+.username {
+	font-size: 24px;
+	padding: 1em;
+}
+
+.filename-show {
+	display: none;
+}
+
+.ui.items .item > .content > .description {
+
+}
